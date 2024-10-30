@@ -1,0 +1,68 @@
+<?php
+/**
+ * Copyright © 2015-2021, Cacholong <info@cacholong.nl>
+ *
+ * This file is part of Cache Control
+ *
+ * Cache Control is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Cache Control is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Cache Control.  If not, see <http://www.gnu.org/licenses/>.
+ */
+?>
+<?php defined('ABSPATH') OR exit;?>
+<?php
+/**
+ * Template for page 'cacholong cache settings'
+ * Note: clear-single-item form is not using Settings api, because it is not a setting, but an extra function.
+ *
+ * @author      Preliot, Piet Rol <info@preliot.nl> (commissioned by Cacholong)
+ * @copyright   Cacholong <info@cacholong.nl>
+ *
+ * @version     1.0.0     Created at 2015-10-21
+ * @version     1.1.0     2019-02-20 Cron purging form
+ * @version     1.2.0     2019-11-12 Factory reset
+ */
+?>
+<div class="wrap">
+    <h1><?php _ex('Cache control by Cacholong', 'Title of settings page', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></h1>
+    <p><?php _e('This website uses various types of caching on one or more hosts. You can purge all caches or a single item.', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></p>
+
+    <h3><?php _e('Purge all caches', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></h3>
+    <p><?php _e('Purge all caches on all available hosts.', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></p>
+
+    <form id="clear-everything" method="post" action="admin-post.php">
+        <input type="hidden" name="action" value="<?php echo \Cacholong\Entities\AdminPostAction::PURGE_ALL ?>" />
+        <?php echo submit_button(__('Purge all caches', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN), 'primary button-hero')?>
+    </form>
+
+    <form id="clear-single-item" method="post" action="admin-post.php">
+        <input type="hidden" name="action" value="<?php echo \Cacholong\Entities\AdminPostAction::PURGE_SINGLE ?>" />
+        <h3><?php _e('Purge single item', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></h3>
+        <p><?php _e('Purge single item from cache:', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></p>
+        <input id="<?php echo \Cacholong\Entities\Identifier::CC_FIELD_SINGLE_PURGE?>" name="<?php echo \Cacholong\Entities\Identifier::CC_FIELD_SINGLE_PURGE?>" type="text" class="regular-text" value="<?php echo get_option(\Cacholong\Entities\Identifier::CC_FIELD_SINGLE_PURGE)?>" placeholder="<?php _ex('relative/path/to/page', 'Placeholder for field single purge', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?>" />
+        <p class="description">(<?php _e('Enter path relative to root of website', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN) ?>)</p>
+        <?php echo submit_button(__('Purge single item', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN))?>
+    </form>
+
+    <form id="<?php echo \Cacholong\Entities\Identifier::CC_SETTINGS_SECTION_FORM_ID ?>" method="post" action="options.php">
+        <?php settings_fields(\Cacholong\Entities\Identifier::CC_OPTIONS);?>
+        <?php do_settings_sections(\Cacholong\Entities\Identifier::CC_SETTINGS_PAGE_ID);?>
+        <?php echo submit_button(__('Save settings', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN))?>
+    </form>
+
+    <form id="factory-reset" method="post" action="admin-post.php">
+        <input type="hidden" name="action" value="<?php echo \Cacholong\Entities\AdminPostAction::FACTORY_RESET ?>" />
+        <h3><?php _e('Factory reset', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></h3>
+        <p><?php _e('With a factory reset all settings are restored to original default settings.', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></p>
+        <?php echo submit_button(__('Factory reset', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN), 'button-link-delete')?>
+    </form>
+</div>

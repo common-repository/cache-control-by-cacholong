@@ -1,0 +1,342 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cache control by Cacholong\n"
+"POT-Creation-Date: 2020-11-17 13:35+0100\n"
+"PO-Revision-Date: 2020-11-17 13:35+0100\n"
+"Last-Translator: Piet Rol <info@preliot.nl>\n"
+"Language-Team: Cacholong <info@cacholong.nl>\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ../core\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: controller/admin/AdminSettingsPageController.php:140
+#: view/admin/settings/page/cacholong_cache_control.phtml:36
+msgctxt "Title of settings page"
+msgid "Cache control by Cacholong"
+msgstr ""
+
+#: controller/admin/AdminSettingsPageController.php:140
+msgctxt "Menu title of settings page"
+msgid "Cache control"
+msgstr ""
+
+#: controller/admin/AdminSettingsPageController.php:175
+msgctxt "Subtitle for settings section"
+msgid "Settings"
+msgstr ""
+
+#: controller/admin/AdminSettingsPageController.php:178
+msgctxt "Subtitle for cronjob settings section"
+msgid "Cronjob settings"
+msgstr ""
+
+#: controller/admin/PurgeCacheController.php:124
+msgid ""
+"Factory settings restored. All settings restored to original default "
+"settings."
+msgstr ""
+
+#: controller/admin/PurgeCacheController.php:237
+#: libraries/WPCLI/Commands.php:160
+#, php-format
+msgid "Purged %s cache."
+msgstr ""
+
+#: controller/admin/PurgeCacheController.php:310
+msgid "fast CGI cache path set to : "
+msgstr ""
+
+#: controller/admin/ToolbarController.php:60
+msgid "Purge caches"
+msgstr ""
+
+#: controller/admin/ToolbarController.php:66
+msgid "Purge all"
+msgstr ""
+
+#: controller/admin/ToolbarController.php:73
+msgid "Purge pagespeed"
+msgstr ""
+
+#: controller/admin/ToolbarController.php:80
+msgid "Purge fastCGI"
+msgstr ""
+
+#: designpattern/observer/CacheHelperSubject.php:219
+msgid "all hosts"
+msgstr ""
+
+#: designpattern/observer/CacheHelperSubject.php:226
+#, php-format
+msgctxt "'Name of cache' cache (List of hosts)"
+msgid "%s cache (%s)"
+msgstr ""
+
+#: designpattern/observer/CacheHelperSubject.php:237
+#, php-format
+msgid "Succesfully purged %s."
+msgstr ""
+
+#: designpattern/observer/CacheHelperSubject.php:240
+msgid "It could take a few minutes to be visible at the frontend."
+msgstr ""
+
+#: designpattern/observer/CacheHelperSubject.php:250
+#, php-format
+msgid "Failed to purge %s."
+msgstr ""
+
+#: designpattern/observer/CacheHelperSubject.php:298
+#, php-format
+msgctxt "Internal exception message"
+msgid "Custom method '%s' does not exist in observer class '%s'."
+msgstr ""
+
+#: designpattern/observer/NginxFastCGICacheHelperObserver.php:299
+msgid "unknown"
+msgstr ""
+
+#: designpattern/observer/NginxFastCGICacheHelperObserver.php:301
+#, php-format
+msgid ""
+"Fast CGI cache path is not writable, please adjust rights. Path: %s, UID: %s."
+msgstr ""
+
+#: designpattern/observer/NginxFastCGICacheHelperObserver.php:305
+msgid "Fast CGI cache path did not contain a valid directory. Given path: "
+msgstr ""
+
+#: designpattern/observer/NginxFastCGICacheHelperObserver.php:309
+msgid ""
+"Fast CGI cache path is empty! Need this to delete cache directory for Nginx "
+"fastCGI."
+msgstr ""
+
+#: libraries/CacholongCacheControlSetup.php:69
+#: libraries/CacholongCacheControlSetup.php:150
+msgid "You are not allowed to access this part of the site."
+msgstr ""
+
+#: libraries/Helpers.php:294 libraries/Helpers.php:300
+msgid " and "
+msgstr ""
+
+#: libraries/Hosts.php:122
+msgid "Failed to read JSON file with hosts."
+msgstr ""
+
+#: libraries/Hosts.php:173
+msgid "JSON file with hosts contains errors."
+msgstr ""
+
+#: libraries/Hosts.php:176
+msgid "JSON hosts contained errors."
+msgstr ""
+
+#: libraries/Json.php:74
+msgctxt "Internal error message JSON class"
+msgid "Failed to encode json string, because of json_encode error."
+msgstr ""
+
+#: libraries/Json.php:101
+msgctxt "Internal error message JSON class"
+msgid "Failed to decode json string, because of json_encode error."
+msgstr ""
+
+#: libraries/Json.php:133
+msgctxt "Internal error message JSON class"
+msgid "The maximum stack depth has been exceeded."
+msgstr ""
+
+#: libraries/Json.php:136
+msgctxt "Internal error message JSON class"
+msgid "Control character error, possibly incorrectly encoded."
+msgstr ""
+
+#: libraries/Json.php:139
+msgctxt "Internal error message JSON class"
+msgid "Invalid or malformed JSON."
+msgstr ""
+
+#: libraries/Json.php:142
+msgctxt "Internal error message JSON class"
+msgid "Syntax error in JSON file."
+msgstr ""
+
+#: libraries/Json.php:145
+msgctxt "Internal error message JSON class"
+msgid "Malformed UTF-8 characters, possibly incorrectly encoded."
+msgstr ""
+
+#: libraries/PurgeCache.php:360
+msgid ""
+"Could not purge single file, because no valid path was given. Please try "
+"again."
+msgstr ""
+
+#: libraries/PurgeCache.php:398
+msgid ""
+"Nothing is purged. If you expected a purge, please check settings page from "
+"Cache control by Cacholong plugin."
+msgstr ""
+
+#: libraries/WPCLI/Commands.php:104
+#, php-format
+msgid "Factory reset site with id %s."
+msgstr ""
+
+#: libraries/WPCLI/Commands.php:184
+msgid "Purged all caches."
+msgstr ""
+
+#: libraries/WPCLI/Commands.php:202
+#, php-format
+msgid "Purge recieved unknown command '%s'."
+msgstr ""
+
+#: view/admin/settings/field/cron_cache_helpers.phtml:47
+msgid "Select one or more caches to purge when cronjob is executed"
+msgstr ""
+
+#: view/admin/settings/field/cron_enabled.phtml:33
+msgid "FAQ"
+msgstr ""
+
+#: view/admin/settings/field/cron_enabled.phtml:36
+msgid "Cronjob purging enabled"
+msgstr ""
+
+#: view/admin/settings/field/cron_enabled.phtml:38
+#, php-format
+msgid ""
+"Wordpress cronjobs are disabled. Please check our %s on our Wordpress plugin "
+"page for instructions."
+msgstr ""
+
+#: view/admin/settings/field/cron_time.phtml:35
+msgctxt "Placeholder for field cron time"
+msgid "HH:MM"
+msgstr ""
+
+#: view/admin/settings/field/cron_time.phtml:36
+#, php-format
+msgid ""
+"Use 24 hour format like 00:30 or 15:15. Current timezone: <strong>%s</strong>"
+msgstr ""
+
+#: view/admin/settings/field/custom_post_purge_settings.phtml:42
+#: view/admin/settings/field/default_post_purge_settings.phtml:42
+msgid "Post url (default)"
+msgstr ""
+
+#: view/admin/settings/field/custom_post_purge_settings.phtml:45
+#: view/admin/settings/field/default_post_purge_settings.phtml:45
+msgid "Home page"
+msgstr ""
+
+#: view/admin/settings/field/custom_post_purge_settings.phtml:48
+#: view/admin/settings/field/default_post_purge_settings.phtml:48
+msgid "All connected Wordpress categories"
+msgstr ""
+
+#: view/admin/settings/field/custom_post_purge_settings.phtml:52
+#: view/admin/settings/field/default_post_purge_settings.phtml:52
+msgid "All connected Woocommerce categories"
+msgstr ""
+
+#: view/admin/settings/field/custom_post_purge_settings.phtml:56
+#: view/admin/settings/field/default_post_purge_settings.phtml:56
+msgid "All caches"
+msgstr ""
+
+#: view/admin/settings/field/custom_post_purge_settings.phtml:59
+#, php-format
+msgid ""
+"Select one or more options. Custom registered Wordpress post types are: %s"
+msgstr ""
+
+#: view/admin/settings/field/default_post_purge_settings.phtml:59
+#, php-format
+msgid "Select one or more options. Default Wordpress post types are: %s"
+msgstr ""
+
+#: view/admin/settings/field/location_json_hosts_file.phtml:33
+msgid "Url or relative file path allowed"
+msgstr ""
+
+#: view/admin/settings/field/remove_style_id.phtml:36
+msgid "Remove id tag (frontend)"
+msgstr ""
+
+#: view/admin/settings/field/remove_style_id.phtml:37
+msgid ""
+"Pagespeed can optimize css performance on frontend by removing id tag from "
+"stylesheets. Setting is ignored when user is seeing admin bar or is using "
+"admin page, to prevent issues with other plugins."
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:37
+msgid ""
+"This website uses various types of caching on one or more hosts. You can "
+"purge all caches or a single item."
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:39
+#: view/admin/settings/page/cacholong_cache_control.phtml:44
+msgid "Purge all caches"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:40
+msgid "Purge all caches on all available hosts."
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:49
+#: view/admin/settings/page/cacholong_cache_control.phtml:53
+msgid "Purge single item"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:50
+msgid "Purge single item from cache:"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:51
+msgctxt "Placeholder for field single purge"
+msgid "relative/path/to/page"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:52
+msgid "Enter path relative to root of website"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:59
+msgid "Save settings"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:64
+#: view/admin/settings/page/cacholong_cache_control.phtml:66
+msgid "Factory reset"
+msgstr ""
+
+#: view/admin/settings/page/cacholong_cache_control.phtml:65
+msgid ""
+"With a factory reset all settings are restored to original default settings."
+msgstr ""
+
+#: view/admin/settings/section/cacholong_cache_control_settings.phtml:33
+msgid "Settings for Cache control by Cacholong."
+msgstr ""
+
+#: view/admin/settings/section/cacholong_cache_control_settings_cronjob.phtml:33
+msgid ""
+"Cache control by Cacholong is able to purge caches with Wordpress cronjobs "
+"on given time of each day."
+msgstr ""

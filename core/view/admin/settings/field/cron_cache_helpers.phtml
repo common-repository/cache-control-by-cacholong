@@ -1,0 +1,47 @@
+<?php
+/**
+ * Copyright © 2015-2021, Cacholong <info@cacholong.nl>
+ *
+ * This file is part of Cache Control
+ *
+ * Cache Control is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Cache Control is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Cache Control.  If not, see <http://www.gnu.org/licenses/>.
+ */
+?>
+<?php defined('ABSPATH') OR exit; ?>
+<?php
+/**
+ * Template for field 'cron cache helpers'
+ * 
+ * @author      Preliot, Piet Rol <info@preliot.nl> (commissioned by Cacholong)
+ * @copyright   Cacholong <info@cacholong.nl>
+ * 
+ * @version     1.0.0     Created at 2019-02-19
+ * 
+ */
+$cronCacheSettings = cacholong_cc_get_cron_settings_caches_field_key_and_name();
+$countCronSettings = count($cronCacheSettings);
+?>
+<fieldset id="<?php echo \Cacholong\Entities\Identifier::CC_FIELDSET_CRON_CACHE_HELPERS ?>">
+    <?php $current = 0 ?>
+    <?php foreach ($cronCacheSettings as $cronCacheFieldKey => $cronCacheName): ?>
+        <input type="checkbox" id="<?php echo $cronCacheFieldKey ?>" name="<?php echo $cronCacheFieldKey ?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($cronCacheFieldKey)) ?> />
+        <label for="<?php echo $cronCacheFieldKey ?>"><?php echo $cronCacheName ?></label>
+        <?php if ($countCronSettings > 1 && ($current < $countCronSettings - 1)): ?>
+            <br />
+        <?php endif; ?>
+        <?php $current++ ?>
+    <?php endforeach;
+    ; ?>
+</fieldset>
+<p class="description">(<?php _e('Select one or more caches to purge when cronjob is executed', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN) ?>)</p>

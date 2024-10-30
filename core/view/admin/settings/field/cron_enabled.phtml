@@ -1,0 +1,39 @@
+<?php
+/**
+ * Copyright © 2015-2021, Cacholong <info@cacholong.nl>
+ *
+ * This file is part of Cache Control
+ *
+ * Cache Control is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Cache Control is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Cache Control.  If not, see <http://www.gnu.org/licenses/>.
+ */
+?>
+<?php defined('ABSPATH') OR exit; ?>
+<?php
+/**
+ * Template for field 'cron_enabled'
+ *
+ * @author      Preliot, Piet Rol <info@preliot.nl> (commissioned by Cacholong)
+ * @copyright   Cacholong <info@cacholong.nl>
+ *
+ * @version     1.0.0     Created at 2019-02-19
+ *
+ */
+$cron_enabled = \Cacholong\Entities\Identifier::CC_FIELD_CRON_ENABLED;
+$faqLink = '<a href="' . \Cacholong\Entities\URL::WORDPRESS_PLUGIN_PATH_FAQ . '" target="_blank">' . __('FAQ', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN) . '</a>';
+?>
+<input type="checkbox" id="<?php echo $cron_enabled ?>" name="<?php echo $cron_enabled ?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($cron_enabled)) ?> />
+<label for="<?php echo $cron_enabled ?>"><?php _e('Cronjob purging enabled', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN) ?></label>
+<?php if (defined('DISABLE_WP_CRON') && DISABLE_WP_CRON): ?>
+    <p class="description">(<?php printf(__('Wordpress cronjobs are disabled. Please check our %s on our Wordpress plugin page for instructions.', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN),$faqLink) ?>)</p>
+<?php endif; ?>

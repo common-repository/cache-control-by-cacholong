@@ -1,0 +1,59 @@
+<?php
+/**
+ * Copyright © 2015-2021, Cacholong <info@cacholong.nl>
+ *
+ * This file is part of Cache Control
+ *
+ * Cache Control is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Cache Control is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Cache Control.  If not, see <http://www.gnu.org/licenses/>.
+ */
+?>
+<?php defined('ABSPATH') OR exit;?>
+<?php
+/**
+ * Template for field 'default post purge settings'
+ * 
+ * @author      Preliot, Piet Rol <info@preliot.nl> (commissioned by Cacholong)
+ * @copyright   Cacholong <info@cacholong.nl>
+ * 
+ * @version     1.0.0     Created at 2016-09-07
+ * 
+ */
+$purge_settings_default = \Cacholong\Entities\Identifier::CC_DEFAULT_POST_PURGE_SETTINGS_DEFAULT;
+$purge_settings_home = \Cacholong\Entities\Identifier::CC_DEFAULT_POST_PURGE_SETTINGS_HOME;
+$purge_settings_category_wordpress = \Cacholong\Entities\Identifier::CC_DEFAULT_POST_PURGE_SETTINGS_CATEGORIES_WORDPRESS;
+$purge_settings_category_woocommerce = \Cacholong\Entities\Identifier::CC_DEFAULT_POST_PURGE_SETTINGS_CATEGORIES_WOOCOMMERCE;
+$purge_settings_flush_all = \Cacholong\Entities\Identifier::CC_DEFAULT_POST_PURGE_SETTINGS_FLUSH_ALL;
+
+$wordpress_default_post_types = cacholong_cc_itemlist_to_sentence(\Cacholong\Entities\PostType::get_wordpress_default()); 
+?>
+<fieldset id="<?php echo \Cacholong\Entities\Identifier::CC_FIELDSET_DEFAULT_POST_PURGE_SETTINGS ?>">
+    <input type="checkbox" id="<?php echo $purge_settings_default?>" name="<?php echo $purge_settings_default?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($purge_settings_default))?> />
+    <label for="<?php echo $purge_settings_default?>"><?php _e('Post url (default)', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></label>
+    <br />
+    <input type="checkbox" id="<?php echo $purge_settings_home?>" name="<?php echo $purge_settings_home?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($purge_settings_home))?> />
+    <label for="<?php echo $purge_settings_home?>"><?php _e('Home page', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></label>
+    <br />
+    <input type="checkbox" id="<?php echo $purge_settings_category_wordpress?>" name="<?php echo $purge_settings_category_wordpress?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($purge_settings_category_wordpress))?> />
+    <label for="<?php echo $purge_settings_category_wordpress?>"><?php _e('All connected Wordpress categories', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></label>
+    <br />
+    <?php if(cacholong_cc_has_woocommerce()): ?>
+    <input type="checkbox" id="<?php echo $purge_settings_category_woocommerce?>" name="<?php echo $purge_settings_category_woocommerce?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($purge_settings_category_woocommerce))?> />
+    <label for="<?php echo $purge_settings_category_woocommerce?>"><?php _e('All connected Woocommerce categories', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></label>
+    <br />
+    <?php endif; ?>
+    <input type="checkbox" id="<?php echo $purge_settings_flush_all?>" name="<?php echo $purge_settings_flush_all?>" <?php echo cacholong_cc_checkbox_checked_attribute(get_option($purge_settings_flush_all))?> />
+    <label for="<?php echo $purge_settings_flush_all?>"><?php _e('All caches', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?></label>
+    <br />
+</fieldset>
+<p class="description">(<?php printf(__('Select one or more options. Default Wordpress post types are: %s', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN), $wordpress_default_post_types)?>)</p>

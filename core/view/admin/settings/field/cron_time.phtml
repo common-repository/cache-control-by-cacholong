@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © 2015-2021, Cacholong <info@cacholong.nl>
+ *
+ * This file is part of Cache Control
+ *
+ * Cache Control is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Cache Control is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Cache Control.  If not, see <http://www.gnu.org/licenses/>.
+ */
+?>
+<?php defined('ABSPATH') OR exit; ?>
+<?php
+/**
+ * Template for field 'cron time'
+ * 
+ * @author      Preliot, Piet Rol <info@preliot.nl> (commissioned by Cacholong)
+ * @copyright   Cacholong <info@cacholong.nl>
+ * 
+ * @version     1.0.0     Created at 2019-02-19
+ */
+
+$value = cacholong_cc_get_option_cron_time();
+$currentTimeZone = cacholong_cc_get_timezone();
+?>
+<input id="<?php echo \Cacholong\Entities\Identifier::CC_FIELD_CRON_TIME ?>" name="<?php echo \Cacholong\Entities\Identifier::CC_FIELD_CRON_TIME ?>" type="text" class="regular-text" value="<?php echo $value ?>" placeholder="<?php _ex('HH:MM', 'Placeholder for field cron time', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN)?>"/>
+<p class="description">(<?php printf(__('Use 24 hour format like 00:30 or 15:15. Current timezone: <strong>%s</strong>', \Cacholong\Entities\Identifier::CC_TEXT_DOMAIN), $currentTimeZone) ?>)</p>
